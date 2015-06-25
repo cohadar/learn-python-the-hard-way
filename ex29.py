@@ -1,0 +1,1 @@
+# oh noes, the if statement, in exercise 29, maybe it is too soon for some poor folks.
