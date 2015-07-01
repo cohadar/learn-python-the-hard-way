@@ -1,6 +1,6 @@
 # Insanity! I wonder if anyone ever finished this tutorial in the way author imagined.
 
-class MyContextManager:
+class MyContextManager(object):
 	def __init__(self, value):
 		self.value = value
 	def __enter__(self):
@@ -105,9 +105,45 @@ feb1 = Feb(33)
 print feb1.febMethod()
 
 ###############################################################################
-class Mar(BaseException):
-	def __str__(self):
-		return "muhaha"
+class MarError(BaseException):
+	pass
+	# def __init__(self, a, b):
+	# 	self.a = a
+	# 	self.b = b
+	# 	self.args = (a, b)
+	# def __str__(self):
+	# 	return "muhaha" + self.a + self.b
 
-#raise Mar()
+try:
+	raise MarError(45, 67)
+except MarError as instance:
+	print instance.args
+	print instance
 
+# do not override exception __init__ without args and __str__ override
+
+
+###############################################################################
+def squares():
+	i = 1
+	while True:
+		yield i * i
+		i += 1
+
+###############################################################################
+from functools import wraps
+
+def square_result(func):
+	@wraps(func)
+	def inner(*args, **kwargs):
+		result = func(*args, **kwargs)
+		return result * result
+	return inner
+
+def add2(a, b):
+	""" my add2 function"""
+	return a + b
+
+decorated = square_result(add2)
+print decorated(3, 4)
+print decorated.__doc__
