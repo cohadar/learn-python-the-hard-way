@@ -1,3 +1,4 @@
+# Do NOT name manual tests with _test
 import random
 from urllib import urlopen
 import sys
