@@ -7,6 +7,7 @@ _lexicon = {
 	'east' : 'direction',
 	'west' : 'direction',
 	'go' : 'verb',
+	'run' : 'verb',
 	'kill' : 'verb',
 	'eat' : 'verb',
 	'the' : 'stop',
@@ -14,7 +15,7 @@ _lexicon = {
 	'of' : 'stop',
 	'princess' : 'noun',
 	'bear' : 'noun',
-
+	'honey' : 'noun',
 }
 
 
