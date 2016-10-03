@@ -3,3 +3,4 @@ context manager -- with statement -- https://www.python.org/dev/peps/pep-0343/
 decorators
 file objects aka streams -- io module
 finders and loaders -- https://www.python.org/dev/peps/pep-0302/
+generator, iterator, iterable, sequence
